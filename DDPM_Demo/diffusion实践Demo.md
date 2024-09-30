@@ -16,7 +16,7 @@
 
 ​![image](assets/image-20240930143700-3hrofra.png)​
 
-在DDPM论文中， $\beta_{t}$ 从 $\beta_{1}$ = 10−4 到 $\beta_{t}$ = 0.02 线性增长。这样，$\beta_{t}$ 变大, $\alpha_{t}$ 也越小， $\bar{\alpha_{t}}$  ​*趋于0的速度越来越快。最后，* $\bar{\alpha_{t}}$​*几乎为0，代入* $x_t=\sqrt{\bar{\alpha}_T}x_o+\sqrt{1-\bar{\alpha}_T}\epsilon$ , $x_t$ 就满足标准正态分布了，符合我们对扩散模型的要求。上述推断可以简单描述为：加噪声公式能够从慢到快地改变原图像，让图像最终均值为0，方差为I 。
+在DDPM论文中， $\beta_{t}$ 从 $\beta_{1}$ = 10−4 到 $\beta_{t}$ = 0.02 线性增长。这样， $\beta_{t}$  变大, $\alpha_{t}$ 也越小， $\bar{\alpha_{t}}$  ​*趋于0的速度越来越快。最后，* $\bar{\alpha_{t}}$​*几乎为0，代入* $x_t=\sqrt{\bar{\alpha}_T}x_o+\sqrt{1-\bar{\alpha}_T}\epsilon$ , $x_t$ 就满足标准正态分布了，符合我们对扩散模型的要求。上述推断可以简单描述为：加噪声公式能够从慢到快地改变原图像，让图像最终均值为0，方差为I 。
 
 ## 反向过程
 
