@@ -17,6 +17,7 @@ $$
 ### DDPM参数初始化
 
 `​ betas:` ​在DDPM论文中，$\beta_{t}$ 从 $\beta_{1}$ = 10−4 到 $\beta_{t}$ = 0.02 线性增长
+
 ​`alphas:` ​在DDPM论文中， $\alpha_{t} = 1 - \beta_{t}$
 
 ​`alpha_bars:`​在DDPM论文中， $\bar{\alpha_{t}} $​= $\alpha_{1} ... \alpha_{t}$  
