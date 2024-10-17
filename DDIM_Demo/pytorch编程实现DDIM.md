@@ -152,13 +152,7 @@ DDIM的计算 $x_{t-1}$ 公式：
 
 与DDPM不同，在计算方差`var`​时（公式里的 $\sigma_t^2$ ），我们要给方差乘一个权重`eta`​。
 
-已知
-
-$
-\sigma_t^2 = \frac{1 - \bar{\alpha}_{t-1}}{1 - \bar{\alpha}_{t}} \cdot \beta_t
-$
-
-由于 
+已知 $\sigma_t^2 = \frac{1 - \bar{\alpha}_{t-1}}{1 - \bar{\alpha}_{t}} \cdot \beta_t$ , 由于 
 
 $$
 1 - \frac{\bar{\alpha}_{t}}{\bar{\alpha}_{t-1}} = \frac{\bar{\alpha}_{t-1} - \bar{\alpha}_{t}}{\bar{\alpha}_{t-1}} = \frac{(1 - \alpha_t) \bar{\alpha}_{t-1}}{\bar{\alpha}_{t-1}} = 1 - \alpha_t = \beta_t
