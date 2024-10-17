@@ -8,7 +8,7 @@ DDIM论文提出了DDPM的两个拓展方向：加速采样、变更采样方差
 
 ## DDPM初始化和采样
 
-根据输入图片$x_0$和采样步数$t$,既可以得到采样t步后的$x_t$:
+根据输入图片 $x_0$ 和采样步数 $t$ ,既可以得到采样t步后的 $x_t$ :
 
 $$
 x_t= \sqrt{\bar{\alpha_{t}}}x_0 +  \sqrt{1-\bar{\alpha_{t}}} \epsilon
@@ -16,11 +16,11 @@ $$
 
 ### DDPM参数初始化
 
-`​ betas:`​在DDPM论文中， ​``​ 从 ​``​=10−4 到​``​=0.02 线性增长。
+`​ betas:` ​在DDPM论文中， ​​$\beta_{t}$ ​从 ​$\beta_{1}$ ​=10−4 到 ​$\beta_{T}$ ​=0.02 线性增长。
 
-​`alphas:`​在DDPM论文中，$\alpha_{t} = 1 - \beta_{t}$
+​`alphas:` ​在DDPM论文中， $ \alpha_{t} = 1 - \beta_{t}$
 
-​`alpha_bars:`​在DDPM论文中，``​= $\alpha_{1} ... \alpha_{t}$  
+​`alpha_bars:`​在DDPM论文中， $\bar{\alpha_{t}} $​= $\alpha_{1} ... \alpha_{t}$  
 
 ```python
 # n_steps 就是论文里的 T
@@ -53,7 +53,7 @@ $$
 
 ### DDPM采样
 
-根据输入图片$x_0$和采样步数$t$,既可以得到采样t步后的$x_t$:
+根据输入图片 $x_0$ 和采样步数 $t$ ,既可以得到采样t步后的 $x_t$ :
 
 $$
 x_t= \sqrt{\bar{\alpha_{t}}}x_0 +  \sqrt{1-\bar{\alpha_{t}}} \epsilon
@@ -134,17 +134,17 @@ def sample_backward_step(self, x_t, t, net, simple_var=True, clip_x0=True):
 
 ## 反向过程
 
-DDPM的计算$x_{t-1}$公式：
+DDPM的计算 $x_{t-1}$ 公式：
 
 ​![image](assets/image-20240930152943-2yvmc4a.png)
 
-DDIM的计算$x_{t-1}$公式：
+DDIM的计算 $x_{t-1}$ 公式：
 
 ​![image](assets/image-20241017165009-ovq1nh3.png)
 
 ​![image](assets/image-20241017165750-5rdn71w.png)​​​
 
-### 计算$σ_tz$
+### 计算 $σ_tz$
 
 ​![image](assets/image-20240930152445-z839lqo.png)​  
 
@@ -153,7 +153,7 @@ DDIM的计算$x_{t-1}$公式：
 与DDPM不同，在计算方差`var`​时（公式里的$σ_t^2$），我们要给方差乘一个权重`eta`​。
 
 $$
-已知σ_t^2=\frac{1-\bar\alpha_{t-1}}{1-\bar\alpha_{t}}.\beta_t，由于1- \frac{\bar{\alpha_{t}}}{\bar{\alpha_{t-1}}} =  \frac{ \bar{\alpha}_{t-1} - \bar{\alpha_{t}}}{\bar{\alpha}_{t-1}}=\frac{(1-\alpha_t) \bar{\alpha}_{t-1}}{\bar{\alpha}_{t-1}} =1-\alpha_t=\beta_t，故σ_t^2=\frac{1-\bar\alpha_{t-1}}{1-\bar\alpha_{t}}.(1- \frac{\bar{\alpha_{t}}}{\bar{\alpha_{t-1}}})
+已知 σ_t^2=\frac{1-\bar\alpha_{t-1}}{1-\bar\alpha_{t}}.\beta_t，由于 1- \frac{\bar{\alpha_{t}}}{\bar{\alpha_{t-1}}} =  \frac{ \bar{\alpha}_{t-1} - \bar{\alpha_{t}}}{\bar{\alpha}_{t-1}}=\frac{(1-\alpha_t) \bar{\alpha}_{t-1}}{\bar{\alpha}_{t-1}} =1-\alpha_t=\beta_t，故 σ_t^2=\frac{1-\bar\alpha_{t-1}}{1-\bar\alpha_{t}}.(1- \frac{\bar{\alpha_{t}}}{\bar{\alpha_{t-1}}})
 $$
 
 ​​
