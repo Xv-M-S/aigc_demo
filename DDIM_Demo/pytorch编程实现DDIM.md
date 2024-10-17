@@ -155,7 +155,7 @@ DDIM的计算 $x_{t-1}$ 公式：
 已知
 
 $$
-\sigma_t^2 = \frac{1 - \bar{\alpha}_{t-1}}{1 - \bar{\alpha}_{t}} \cdot \beta_t
+  \sigma_t^2 = \frac{1 - \bar{\alpha}_{t-1}}{1 - \bar{\alpha}_{t}} \cdot \beta_t
 $$
 
 由于 
