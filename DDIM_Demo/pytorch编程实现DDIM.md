@@ -144,7 +144,7 @@ DDIM的计算 $x_{t-1}$ 公式：
 
 ​![image](assets/image-20241017165750-5rdn71w.png)​​​
 
-### 计算 $σ_tz$
+### 计算 $\sigma_t z$
 
 ​![image](assets/image-20240930152445-z839lqo.png)​  
 
